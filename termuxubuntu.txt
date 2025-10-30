@@ -1,0 +1,33 @@
+# On android device install termux from playstore
+
+# Install basic packages on termux
+termux-setup-storage
+apt update && apt upgrade
+apt install build-essential openssh curl git wget subversion proot proot-distro python nmap neovim ranger
+
+# Install ubuntu on termux
+proot-distro install ubuntu
+proot-distro login ubuntu
+
+# Platformio install
+apt update && apt upgrade
+apt install apt-utils build essential cmake neovim 
+apt install git wget subversion imagemagick nano
+apt install avra avrdude gcc-avr avr-libc
+
+# Install python3 on termuxubuntu
+apt install python3-pip python3-numpy python3-scipy python3-matplotlib python3-mpmath python3-sympy python3-cvxopt
+
+# Install nvim and ranger
+apt install neovim ranger libxtst-dev libx11-dev python3-pynvim
+
+# Install platformio on termuxubuntu
+apt install pipx python3-venv
+pipx install platformio
+export PATH=$PATH:/root/.local/bin
+
+# Execute the following on ubuntu
+cd /sdcard/
+git clone https://wwww.github.com/gadepall/digital-design
+cd digital-design/vaman/esp32/codes/ide/blink/
+pio run
